@@ -15,14 +15,17 @@ public class cliente {
         
         System.out.println("Digite a porta a ser usada: ");
             PORTA = c.nextInt();
-        
-        try (Socket socket = new Socket("localhost", PORTA);
+         System.out.println("A porta" + PORTA);
+       
+         try (Socket socket = new Socket("localhost", PORTA);
+                 
              BufferedReader leitor = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              PrintWriter escritor = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in))) {
 
             System.out.println("Conectado ao servidor. Digite mensagens para enviar.");
             System.out.println("Para sair, digite 'sair'.");
+           
 
             String mensagemParaEnviar;
             String resposta;
